@@ -3,12 +3,12 @@
  */
 import org.junit.Test;
 import guitar.common.SQLiteJDBC;
-import guitar.dao.GuitarDao;
-import guitar.dao.impl.GuitarDaoimpl;
+import guitar.dao.Inventory;
+import guitar.dao.impl.InventoryDaoimpl;
 import guitar.domain.Guitar;
 import guitar.domain.GuitarSpec;
-import guitar.service.GuitarService;
-import guitar.service.impl.GuitarServiceimpl;
+import guitar.service.InventoryService;
+import guitar.service.impl.InventoryServiceimpl;
 
 import static org.junit.Assert.*;
 
@@ -22,15 +22,15 @@ public class GuitarSpecServiceimplTest {
 	@Test
 	public void Search(){
 		Guitar searchGuitar=new Guitar("11277", 1499.95,new GuitarSpec("Collings", "CJ", "acoustic", 12, "Indian Rosewood", "Sitka")); 
-		GuitarService GuitarService=new GuitarServiceimpl();
+		InventoryService GuitarService=new InventoryServiceimpl();
 		GuitarService.Search(searchGuitar);		
 		System.out.println(GuitarService.Search(searchGuitar).get(0).getPrice());
 	}
 	@Test
 	public void Search2(){
 		Guitar searchGuitar=new Guitar("11277", 1499.95,new GuitarSpec("Collings", "CJ", "acoustic", 12, "Indian Rosewood", "Sitka")); 
-		GuitarServiceimpl GuitarServiceimpl=new GuitarServiceimpl();
-		GuitarDaoimpl GuitarDaoimpl=new GuitarDaoimpl();
+		InventoryServiceimpl GuitarServiceimpl=new InventoryServiceimpl();
+		InventoryDaoimpl GuitarDaoimpl=new InventoryDaoimpl();
 		GuitarServiceimpl.setGuitarDao(GuitarDaoimpl);
 		GuitarServiceimpl.Search(searchGuitar);		
 		System.out.println(GuitarServiceimpl.Search(searchGuitar).get(0).getPrice());

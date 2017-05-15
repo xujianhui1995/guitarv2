@@ -2,12 +2,11 @@ package guitar.action;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import guitar.dao.GuitarDao;
-import guitar.dao.impl.GuitarDaoimpl;
+import guitar.dao.impl.InventoryDaoimpl;
 import guitar.domain.Guitar;
 import guitar.domain.GuitarSpec;
-import guitar.service.GuitarService;
-import guitar.service.impl.GuitarServiceimpl;
+import guitar.service.InventoryService;
+import guitar.service.impl.InventoryServiceimpl;
 
 public class Inventory extends ActionSupport {
 	private String serialNumber, builder, model, type, backWood, topWood;
@@ -86,7 +85,7 @@ public class Inventory extends ActionSupport {
 	public String search() {
 		Guitar searchGuitar = new Guitar(serialNumber, price,
 				new GuitarSpec(builder, model, type, numStrings, backWood, topWood));
-		GuitarService GuitarService = new GuitarServiceimpl();
+		InventoryService GuitarService = new InventoryServiceimpl();
 		GuitarService.Search(searchGuitar);
 		ActionContext.getContext().put("guitar", GuitarService.Search(searchGuitar).get(0));
 		return SUCCESS;

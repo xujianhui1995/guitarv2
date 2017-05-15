@@ -3,8 +3,8 @@
  */
 import org.junit.Test;
 import guitar.common.SQLiteJDBC;
-import guitar.dao.GuitarDao;
-import guitar.dao.impl.GuitarDaoimpl;
+import guitar.dao.Inventory;
+import guitar.dao.impl.InventoryDaoimpl;
 import guitar.domain.Guitar;
 import guitar.domain.GuitarSpec;
 
@@ -51,7 +51,7 @@ public class GuitarSpecDaoimplTest {
   	}
       @Test
       public void getGuitarLinkedList2(){
-      	GuitarDaoimpl gsp=new GuitarDaoimpl();      	
+      	InventoryDaoimpl gsp=new InventoryDaoimpl();      	
       	System.out.println(gsp.getGuitarLinkedList().get(0).getSerialNumber());
       }
       @Test
@@ -64,7 +64,7 @@ public class GuitarSpecDaoimplTest {
     	}
       @Test
       public void Search(){
-      	GuitarDao gd=new GuitarDaoimpl(); 
+      	Inventory gd=new InventoryDaoimpl(); 
 		Guitar searchGuitar=new Guitar("11277", 1499.95,new GuitarSpec("Collings", "CJ", "acoustic", 12, "Indian Rosewood", "Sitka")); 
 		gd.Search(searchGuitar);
       	System.out.println(gd.Search(searchGuitar).get(0).getSerialNumber());

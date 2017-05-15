@@ -8,15 +8,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 import guitar.common.SQLiteJDBC;
-import guitar.dao.GuitarDao;
+import guitar.dao.Inventory;
 import guitar.domain.Guitar;
 import guitar.domain.GuitarSpec;
 
-public class GuitarDaoimpl implements GuitarDao{
+public class InventoryDaoimpl implements Inventory{
 	private List<Guitar> guitars;
 	private String sql;
 	private PreparedStatement pstmt;
-	public GuitarDaoimpl() {
+	public InventoryDaoimpl() {
 		guitars=new LinkedList<Guitar>();
 	}
 	public List<Guitar> getGuitarLinkedList(){

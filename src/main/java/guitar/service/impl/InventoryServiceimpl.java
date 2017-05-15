@@ -2,21 +2,21 @@ package guitar.service.impl;
 
 import java.util.List;
 
-import guitar.dao.GuitarDao;
-import guitar.dao.impl.GuitarDaoimpl;
+import guitar.dao.Inventory;
+import guitar.dao.impl.InventoryDaoimpl;
 import guitar.domain.Guitar;
-import guitar.service.GuitarService;
+import guitar.service.InventoryService;
 
-public class GuitarServiceimpl implements GuitarService {
-	private GuitarDao guitarDao;
-	public void setGuitarDao(GuitarDao guitarDao) {
+public class InventoryServiceimpl implements InventoryService {
+	private Inventory guitarDao;
+	public void setGuitarDao(Inventory guitarDao) {
 		this.guitarDao = guitarDao;
 	}
 
 	@Override
 	public List<Guitar> Search(Guitar searchGuitar) {
 		// TODO Auto-generated method stub
-		GuitarDao GuitarDaoimpl=new GuitarDaoimpl();
+		Inventory GuitarDaoimpl=new InventoryDaoimpl();
 		setGuitarDao(GuitarDaoimpl);
 		return guitarDao.Search(searchGuitar);
 	}

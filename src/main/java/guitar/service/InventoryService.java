@@ -2,13 +2,13 @@ package guitar.service;
 
 import java.util.List;
 
-import guitar.dao.GuitarDao;
-import guitar.dao.impl.GuitarDaoimpl;
+import guitar.dao.Inventory;
+import guitar.dao.impl.InventoryDaoimpl;
 import guitar.domain.Guitar;
 import guitar.domain.GuitarSpec;
-import guitar.service.impl.GuitarServiceimpl;
+import guitar.service.impl.InventoryServiceimpl;
 
-public interface GuitarService {
+public interface InventoryService {
 
 	List<Guitar> Search(Guitar searchGuitar);	
 
